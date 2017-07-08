@@ -1,0 +1,44 @@
+Author: Justin Angra
+Last Updated: 10/32/14
+
+----------------------
+Command Line Arguments
+----------------------
+
+Example(via iPython):  run ME_Euler.py -m 100x100.txt -v v100.txt -s 6
+ 
+-m | -v | -s
+  (required) Specifies the T (kinetic) and V (potential) matrix of the initial Hamiltonian to evolve as well as the number of steps to take for the Euler Method. 
+
+    -m - Square diagonalized matrix containing eigenvalues as elements of diagonal. Matrix in text file must of be of the form:
+	
+	a1 a2 a3
+	a4 a5 a6
+        a6 a7 a8
+	
+as in a white space between each elements and a new line after each row of elements starting at the first character of the text file.
+
+    -v - Square symmetric matrix containing inital potential values as elements. Matrix in text file must be of exact same form as described above. 
+
+    -s - number of steps for Euler Method to take, only integer values accepted. 
+
+Note: argument of -m and -v must be of the same size.
+
+---------------------------
+Included Packages And Files
+---------------------------
+
+Included file is utils.py which contains gmpy library. 
+
+INSTALLATION OF GMPY(LINUX):
+    sudo aptitude install libgmp-dev
+    sudo pip install gmpy
+
+For any issues please see https://code.google.com/p/gmpy/wiki/InstallingGmpy2 
+
+--------------------
+Algorithmic Analysis
+--------------------
+
+Running files for matrices of size (number of diagonal elements) 2, 3, ... , 9, 10, 20, ... , 90, 100, 200 and plotting. We conclude that the algorithm runs at n^2, where n is the matrix size. 
+
